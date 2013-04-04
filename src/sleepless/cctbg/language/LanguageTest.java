@@ -1,4 +1,4 @@
-package language;
+package sleepless.cctbg.language;
 
 import org.antlr.v4.runtime.ANTLRFileStream;
 import org.antlr.v4.runtime.CommonTokenStream;
