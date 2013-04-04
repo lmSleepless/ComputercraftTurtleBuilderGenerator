@@ -1,7 +1,7 @@
 grammar TurtleBuildGrammer;
 
 @header {
-package language;
+package sleepless.cctbg.language;
 }
 
 prog: gen_expr* ;

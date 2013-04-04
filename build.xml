@@ -2,7 +2,7 @@
 	<property name="src" location="src" />
 	<property name="gen" location="gen" />
 	<property name="src" location="src" />
-	<property name="package" value="language" />
+	<property name="package" value="sleepless/cctbg/language" />
 
 	<path id="classpath">
 		<pathelement location="lib/antlr-4.0-complete.jar" />
