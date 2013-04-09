@@ -71,6 +71,11 @@ public class TurtleBuildGrammerParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof TurtleBuildGrammerListener ) ((TurtleBuildGrammerListener)listener).exitProg(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof TurtleBuildGrammerVisitor ) return ((TurtleBuildGrammerVisitor<? extends T>)visitor).visitProg(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final ProgContext prog() throws RecognitionException {
@@ -130,6 +135,11 @@ public class TurtleBuildGrammerParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof TurtleBuildGrammerListener ) ((TurtleBuildGrammerListener)listener).exitGen_expr(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof TurtleBuildGrammerVisitor ) return ((TurtleBuildGrammerVisitor<? extends T>)visitor).visitGen_expr(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -198,6 +208,11 @@ public class TurtleBuildGrammerParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof TurtleBuildGrammerListener ) ((TurtleBuildGrammerListener)listener).exitRepeat_expr(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof TurtleBuildGrammerVisitor ) return ((TurtleBuildGrammerVisitor<? extends T>)visitor).visitRepeat_expr(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Repeat_exprContext repeat_expr() throws RecognitionException {
@@ -251,6 +266,11 @@ public class TurtleBuildGrammerParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof TurtleBuildGrammerListener ) ((TurtleBuildGrammerListener)listener).exitBuilddir(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof TurtleBuildGrammerVisitor ) return ((TurtleBuildGrammerVisitor<? extends T>)visitor).visitBuilddir(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final BuilddirContext builddir() throws RecognitionException {
@@ -288,6 +308,11 @@ public class TurtleBuildGrammerParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof TurtleBuildGrammerListener ) ((TurtleBuildGrammerListener)listener).exitBuilddir_opt(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof TurtleBuildGrammerVisitor ) return ((TurtleBuildGrammerVisitor<? extends T>)visitor).visitBuilddir_opt(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -338,6 +363,11 @@ public class TurtleBuildGrammerParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof TurtleBuildGrammerListener ) ((TurtleBuildGrammerListener)listener).exitDatadict_block(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof TurtleBuildGrammerVisitor ) return ((TurtleBuildGrammerVisitor<? extends T>)visitor).visitDatadict_block(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -394,6 +424,11 @@ public class TurtleBuildGrammerParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof TurtleBuildGrammerListener ) ((TurtleBuildGrammerListener)listener).exitDatadict_decl_list(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof TurtleBuildGrammerVisitor ) return ((TurtleBuildGrammerVisitor<? extends T>)visitor).visitDatadict_decl_list(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Datadict_decl_listContext datadict_decl_list() throws RecognitionException {
@@ -446,6 +481,11 @@ public class TurtleBuildGrammerParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof TurtleBuildGrammerListener ) ((TurtleBuildGrammerListener)listener).exitDatadict_decl(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof TurtleBuildGrammerVisitor ) return ((TurtleBuildGrammerVisitor<? extends T>)visitor).visitDatadict_decl(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Datadict_declContext datadict_decl() throws RecognitionException {
@@ -492,6 +532,11 @@ public class TurtleBuildGrammerParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof TurtleBuildGrammerListener ) ((TurtleBuildGrammerListener)listener).exitBlock_symbol(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof TurtleBuildGrammerVisitor ) return ((TurtleBuildGrammerVisitor<? extends T>)visitor).visitBlock_symbol(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Block_symbolContext block_symbol() throws RecognitionException {
@@ -528,6 +573,11 @@ public class TurtleBuildGrammerParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof TurtleBuildGrammerListener ) ((TurtleBuildGrammerListener)listener).exitBlock_meaning(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof TurtleBuildGrammerVisitor ) return ((TurtleBuildGrammerVisitor<? extends T>)visitor).visitBlock_meaning(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -581,6 +631,11 @@ public class TurtleBuildGrammerParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof TurtleBuildGrammerListener ) ((TurtleBuildGrammerListener)listener).exitRepeat(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof TurtleBuildGrammerVisitor ) return ((TurtleBuildGrammerVisitor<? extends T>)visitor).visitRepeat(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -636,6 +691,11 @@ public class TurtleBuildGrammerParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof TurtleBuildGrammerListener ) ((TurtleBuildGrammerListener)listener).exitRepeat_iterations(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof TurtleBuildGrammerVisitor ) return ((TurtleBuildGrammerVisitor<? extends T>)visitor).visitRepeat_iterations(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final Repeat_iterationsContext repeat_iterations() throws RecognitionException {
@@ -684,6 +744,11 @@ public class TurtleBuildGrammerParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof TurtleBuildGrammerListener ) ((TurtleBuildGrammerListener)listener).exitBuild_set(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof TurtleBuildGrammerVisitor ) return ((TurtleBuildGrammerVisitor<? extends T>)visitor).visitBuild_set(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -738,6 +803,11 @@ public class TurtleBuildGrammerParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof TurtleBuildGrammerListener ) ((TurtleBuildGrammerListener)listener).exitBuild_set_item(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof TurtleBuildGrammerVisitor ) return ((TurtleBuildGrammerVisitor<? extends T>)visitor).visitBuild_set_item(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
